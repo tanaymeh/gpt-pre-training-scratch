@@ -16,3 +16,5 @@ class Config:
     ffn_drop_value = 0.2
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
     wandb = False
+    pretrained = "/kaggle/input/pretrained_path.pth"
+    model_name = "smol_gpt_model.pt"

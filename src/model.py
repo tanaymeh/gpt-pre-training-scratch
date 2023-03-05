@@ -100,15 +100,18 @@ class GPT(nn.Module):
         # And finally pass it through the final layer to get the logits
         logits = self.lm_head(x)
 
-        if targets is None:
-            loss = None
-        else:
-            B, C, V = logits.shape
-            logits = logits.view(B*C, V)
-            targets = targets.view(B*C)
-            loss = nn.functional.cross_entropy(logits, targets)
-        return logits, loss
+        return logits
     
+def loss_fn(logits, targets):
+    """
+    Loss function to calculate loss
+    """
+    B, C, V = logits.shape
+    logits = logits.view(B*C, V)
+    targets = targets.view(B*C)
+    return nn.functional.cross_entropy(logits, targets)
+
+
 def generate(model, prompt, max_tokens, temperature=0.7):
     """
     Generates text based on given prompt
