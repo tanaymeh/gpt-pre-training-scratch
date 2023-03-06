@@ -1,7 +1,14 @@
-# HarryPotterGPT - GPT trained on Harry Potter Data
+# GPT Pre-training from Scratch
 
-I made this project thanks to Andrej Karpathy's excellent video on coding a GPT model from scratch. This project is my attempt to deeply understand how GPT works under-the-hood by coding it myself and training it on all Harry Potter books (Volume 1 - 7).
+![](gpt_arch.png)
 
-When the training is finished, this model should be able to generate text in style of Harry Potter.
+This repository is my attempt on writing a GPT model and pre-training it from scratch on data openly found on the internet, in this case – the [Bookcorpus dataset](https://www.kaggle.com/datasets/krishbaisoya/english-bookcorpus) on Kaggle.
 
-The total training data is roughly 7MB in size.
+I have currently only trained the model on a very small subset of this data because of resource constraints and because of my decision to see how good of a model one can train for free with only his/her skills.
+
+I wrote the GPT model from scratch with a lot of inspiration and help form Andrej Karpathy's [nanoGPT](https://github.com/karpathy/nanoGPT). Huge shoutout and thanks to his work in educating millions about these LLMs.
+
+In this README, you will find several notes on model architecture, data tokenization, data loading and in-general model training.
+
+I am currently in the process of writing a blog post where I will have detailed several approaches on how to train the model and load data efficiently as well as my observations while doing this.
+
