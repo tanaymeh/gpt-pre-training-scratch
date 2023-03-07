@@ -30,7 +30,7 @@ class CustomRandomSampler(Sampler):
 class TextDataset(Dataset):
     def __init__(self, text_file, config, tokenizer=None):
         self.text_file = text_file.split()
-        self.file_size_ = len(self.text_file)
+        self.file_size = len(self.text_file)
         self.config = config
         self.tokenizer = tokenizer if tokenizer else GPT2TokenizerFast.from_pretrained('gpt2')
         
@@ -46,4 +46,4 @@ class TextDataset(Dataset):
         return (text, target)
 
     def __len__(self):
-        return self.file_size_
+        return self.file_size
